@@ -1,0 +1,136 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color: #8fa3b8;
+    align-content: center;
+    justify-content: center;
+}
+@font-face{
+    font-family: 'iran';
+    src: url(../font/irsans_P30Day.com.ttf);
+}
+@font-face{
+    font-family: 'bar';
+    src: url(../font/BRADHITC.TTF);
+}
+@font-face{
+    font-family: 'np';
+    src: url(../font/NPINami.ttf);
+}
+.all{
+    max-width: 100%;
+    height: 100%;
+    align-content: center;
+    justify-content: center;
+}
+form{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+  
+    text-align: center;
+    background-color: #0b1f3a;
+
+    backdrop-filter: blur(15px);
+    border-radius: 16px;
+    border: 2px solid #1f9aca;
+ 
+    
+}
+@media(max-width:800px){
+    form{
+        width: 70%;
+    }
+}
+@media(max-width:400px){
+    form{
+        width: 90%;
+    }
+    
+}
+input{
+    font-family: 'iran';
+    width: 70%;
+    text-align: center;
+    font-size: x-large;
+    border-radius: 8px ;
+    border: none;
+    box-shadow: 0 5px 5px #1f9aca;
+    
+    background-color: transparent;
+    color: #ffffff;
+    transition: 0.3s;
+    font-family: 'title';
+    margin-top: 50px;
+    color: white;
+    height: 45px;
+
+}
+input:focus{
+    outline: none;
+    border-color: #4e73df;
+    box-shadow: 0 0 8px rgba(78, 115, 223, 0.2);
+}
+.circle_one{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: #ff8c00;
+    position: absolute;
+    z-index: -1;
+    margin-left: 22%;
+    margin-bottom: 50px;
+}
+.circle_two{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: #1f9aca;
+    position: absolute;
+    z-index: -1;
+    margin-left: 68%;
+    margin-top: 15%;
+}
+button{
+    font-family: 'iran';
+    margin-top: 60px;
+    margin-bottom: 10px;
+     border: none;
+    outline: none;
+    font-family: inherit;
+    width: 50%;
+    color: #ffffff;
+    background-color: #4e73df;
+    border-radius: 5px ;
+    font-size: xx-large ;
+    text-align: center;
+    display: block;
+    height: 50px ;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+button:hover{
+    background-color: #2e59d9;
+    box-shadow: 0px 0px 5px #03e9f4, 0px 0px 25px #03e9f4, 0px 0px 28px #03e9f4;
+    -webkit-box-reflect: below 2px linear-gradient(transparent,rgba(3, 255, 3, 0.274));
+}
+h1{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 70px;
+    line-height: 200px;
+    color:  #8fa3b8;
+}
+#timi{
+    color: red;
+    padding: 10px;
+    font-weight: 800;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

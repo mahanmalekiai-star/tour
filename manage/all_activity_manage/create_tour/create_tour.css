@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face{
+    font-family: 'vazir';
+    src: url(../../../font/Vazir-Light.ttf);
+}
+@font-face{
+    font-family:'iran';
+    src: url(../../../font/irsans_P30Day.com.ttf);
+}
+body{
+    background-color: #2d5a27;
+
+}
+.all{
+    
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f2e8cf;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+    margin-top: 50px;
+    border-radius: 20px;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    
+}
+#file{
+    display: none;
+}
+h4,label{
+    font-family: 'vazir';
+}
+h4{
+    font-size: xx-large;
+    display: inline;
+    
+}
+h3{
+    font-family:'iran';
+    display: inline;
+    font-size: xx-large;
+    color: gold;
+}
+.label{
+    margin-top: 20px;
+    width: 100%;
+}
+label{
+    display: block;
+    width: 50%;
+    cursor: pointer;
+    font-size: larger;
+    box-shadow: 0 3px 3px #8adb80;
+    border-radius: 3px;
+    transition: 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.5s;
+    
+}
+label:hover{
+    box-shadow: 0 -3px 3px #8adb80;
+    transform: translateY(-5px);
+
+}
+.tour{
+    width: 40%;
+    padding: 30px;
+    text-align: center;
+   
+    background-color: #386641;
+    border-radius: 25px;
+    color: #f2e8cf;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+    margin-bottom: 10px;
+   
+}
+input,textarea{
+    width: 100%;
+    margin-top: 20px;
+    resize: none;
+    text-align: center;
+    font-family: 'vazir';
+    border: none;
+     font-family: 'vazir';
+    font-size: 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+
+}
+input:focus{
+    outline: none;
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-5px);
+}
+textarea:focus{
+    outline: none;
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-5px);
+
+}
+button{
+    cursor: pointer;
+    font-family: 'vazir';
+    font-size: larger;
+    margin-top: 30px;
+    border: none;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    width: 60%;
+    font-weight: 800;
+    box-shadow: 5px 5px 5px #8adb80;
+}
+button:active{
+    background-color: #a7c957;
+}
+
+@media(max-width:700px){
+    .tour{
+        width: 70%;
+    }
+}
+h6{
+    display: inline;
+    font-family: 'vazir';
+    font-size: larger;
+    margin-top: 10px;
+    color: rgb(106, 243, 106);
+    margin-top: 10px;
+}
+h5{
+    display: inline;
+    font-family: 'vazir';
+    font-size: x-large;
+    margin-top: 10px;
+}

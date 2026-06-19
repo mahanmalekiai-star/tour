@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face{
+    font-family: 'vazir';
+    src: url(../../../font/Vazir-Light.ttf);
+}
+.box_search{
+    width: 100%;
+    box-shadow: 2px 3px 5px rgb(0, 108, 180);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+    height: 100%;
+}
+.search{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    text-align: center;
+}
+input{
+    text-align: center;
+    font-family: 'vazir';
+    font-size: x-large;
+    border-radius: 10px;
+    border: 1px solid  rgb(24, 110, 238) ;
+    box-shadow: 0 4px 10px darkcyan;
+
+
+}
+input:focus{
+    outline: none;
+}
+button{
+    background-color: rgb(24, 110, 238);
+    font-family: 'vazir';
+    font-size: x-large;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px darkcyan;
+    transition: 0.3s;
+
+}
+.container_one{
+    width: 90%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container_two{
+    width: 80%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    height: 100%;
+    box-shadow: 0 4px 10px black;
+    background: linear-gradient(135deg,#0f172a,#1f3963);
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+button:hover{
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 5px rgb(156, 248, 248);
+}
+.population{
+    border: 2px solid green;
+    padding: 10px;
+    direction: rtl;
+    font-family: 'vazir';
+    width: fit-content;
+    margin-left: auto;
+    margin-top: 30px;
+    background-color: rgb(45, 85, 45);
+    color: rgb(182, 177, 255);
+    border-radius: 20px;
+    text-shadow: 2px 3px 5px blue;
+}

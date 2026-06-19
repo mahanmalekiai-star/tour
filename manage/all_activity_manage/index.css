@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face{
+    font-family: 'vahid';
+    src: url(../../font/Vazir-Light.ttf);
+}
+body{
+     background-color: #f1f5f9;
+     color: #0f172a;
+}
+.all{
+    background: linear-gradient(135deg,#0f172a,#3b82f6);
+    width: 90%;
+    box-shadow: 0 0 5px black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+.users,.change,.tours{
+    background-color: transparent;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    text-align: center;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.5),0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(203, 213, 255, 0.4);
+   
+}
+button{
+   
+    cursor: pointer;
+    width: 70%;
+    background-color: rgba(255,255,255,0.25);
+    border: none;
+    margin-top: 20px;
+    font-family: 'vahid';
+    font-size: xx-large;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(196, 196, 196);
+    transition: 0.3s;
+     border: 1px solid rgba(243, 241, 241, 0.3);
+    
+}
+button:active{
+    outline: none;
+}
+p{
+    font-size: 17px;
+    font-weight: 600;
+}
+button:hover{
+    background-color: rgb(112, 173, 253);
+    transform: translateY(-5px);
+    color: black;
+}
+@media(max-width:530px){
+    button{
+        font-size: x-large;
+    }
+}
+h5{
+    display: inline;
+    height: fit-content;
+    width: fit-content;
+    box-shadow: 2px 3px 3px white;
+}
+
+.box_new_meessage{
+    position: sticky;
+    bottom: 0;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+   
+    
+}
+.box_close{
+    width: 10%;
+    height: fit-content;
+    margin-left: auto;
+    padding: 10px;
+    box-shadow: none;
+    border: none;
+    background: none;
+}
+#close{
+    font-size: small;
+    box-shadow: none;
+    border: none;
+    background: none;
+
+}
+.id{
+    width: 100%;
+    text-align: center;
+   
+  
+    align-items: center;
+    justify-content: center;
+}
+.input{
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    font-family: 'vazir';
+    border-radius: 10px;
+    font-size: x-large;
+    box-shadow: 0 5px 5px black;
+    flex-wrap: wrap;
+}
+.input:focus{
+    outline: none;
+}
+.submit{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+#submit{
+    background: linear-gradient(135deg,#0f172a,#3b82f6);
+    margin-left: auto;
+}
+#submit:hover{
+    text-shadow: 0 5px 5px  #1effff;
+    color: white;
+}
+@media(max-width:680px){
+    .box_new_meessage{
+        width: 88%;
+    }
+
+}
+textarea{
+    resize: none;
+}

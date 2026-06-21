@@ -3,6 +3,7 @@ let welcom=document.getElementById("welcom")
 let button_one=document.getElementById('button_one')
 let support=document.getElementById('support')
 let box_support=document.getElementById('box_support')
+let container=document.getElementById('container')
 
 new Swiper(swiper,{
     loop:true,
@@ -106,3 +107,19 @@ function show_support() {
 support.addEventListener('click',show_support)
 
 
+
+function all_tour() {
+    fetch('http://127.0.0.1:8000/Account_user/show_all_tourist/').then(
+        function (response) {
+            return response.json()
+            
+        }
+    ).then(
+        function (show_all_tourist) {
+            
+            
+        }
+    )
+    
+}
+window.onload=all_tour

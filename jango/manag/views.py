@@ -6,12 +6,13 @@ import json
 from .models import *
 from datetime import timedelta,datetime
 from login.models import *
-file=list()
 eror=0
 time='00:00:10'
 finish='00:00:00'
 finish=datetime.strptime(finish,'%H:%M:%S')
 time=datetime.strptime(time,'%H:%M:%S')
+idd=set()
+
 @csrf_exempt
 @require_POST
 def login_manage(request):
@@ -156,7 +157,7 @@ def send_sms(request):
 @csrf_exempt
 @require_POST
 def save_tour(request):
-    global file
+    global idd
     file=request.FILES.getlist('file')
     name_place=request.POST.get('name_place')
     expresion=request.POST.get('expresion')
@@ -167,10 +168,25 @@ def save_tour(request):
         price=price
 
     )
-    data=upload_tourist.objects.get(name_place=name_place)
+    data=upload_tourist.objects.latest('id')
+    print(data.id)
+    for i in file:
+        upload_image.objects.create(
+            image=i,
+            witch_tour=data
+        )
     return JsonResponse({
-        'id':data.id
+        'id':True
     })
+@csrf_exempt
+@require_POST
+def delet_countent(request):
+    data=json.loads(request.body)
+    print(data)
+    data=upload_tourist.objects.filter(id=data['id'])
+    data.delete()
+    
+
 # def upolad_file(reqest):
 
 # Create your views here.

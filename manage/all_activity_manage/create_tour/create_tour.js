@@ -29,15 +29,15 @@ function upload_tour(reload){
     //     }
     // ).then(
     //     function (save_tour) {
-    //         // let id=save_tour['id']
-    //         // let box_one=document.createElement('h6')
-    //         // box_one.innerText="این عدد را در کادر زیر  وارد کنید "
-    //         // let box_two=document.createElement('h5')
-    //         // box_two.innerText=id
-    //         // box_two.style.color="orange"
-    //         // let box_three=document.createElement('div')
-    //         // box_three.innerHTML=`<input type="number" id="conector"> <button>ثبت</button> `
-    //         // tour.append(box_two,box_one,box_three)
+    //         let id=save_tour['id']
+    //         let box_one=document.createElement('h6')
+    //         box_one.innerText="این عدد را در کادر زیر  وارد کنید "
+    //         let box_two=document.createElement('h5')
+    //         box_two.innerText=id
+    //         box_two.style.color="orange"
+    //         let box_three=document.createElement('div')
+    //         box_three.innerHTML=`<input type="number" id="conector"> <button>ثبت</button> `
+    //         tour.append(box_two,box_one,box_three)
             
             
             

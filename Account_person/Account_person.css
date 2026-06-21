@@ -5,6 +5,7 @@
 }
 html{
     scroll-behavior: smooth;
+     
 }
 .all{
     width: 100%;
@@ -97,11 +98,14 @@ button:hover{
 
 
 .container{
+    text-align: center;
     width: 90%;
     box-shadow: 2px 3px 5px #d35400;
-    height: 200px;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
+    flex-wrap: wrap;
+    height: 100%;
 }
 .all_buttons{
    
@@ -146,7 +150,7 @@ h2{
 }
 .support{
     position: sticky;
-    top: 500px;
+    bottom: 0;
     z-index: 2;
     max-width: 100px;
     height: 100px;
@@ -257,4 +261,71 @@ a:hover{
     background-color: #d35400;
     transform: translateY(-5px);
     box-shadow: 3px 2px 2px  rgb(255, 152, 55);
+}
+.img{
+    width: 100%;
+    height: 300px;
+    padding: 40px;
+}
+.image_tourist{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+.info{
+    border-radius: 16px;
+    width: 50%;
+    height: fit-content;
+    margin-top: auto;
+    padding: 10px;
+    direction: rtl;
+    margin-left: auto;
+    background-color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0,0.5);
+    margin: 30px auto;
+    border: 1px solid #edf2f7;
+    transition: 0.3s;
+    flex-wrap: wrap;
+   
+
+}
+.info:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0,0.3);
+}
+h4,h3{
+    width: fit-content;
+    height: fit-content;
+    font-family: 'vazir';
+    font-size: larger;
+    font-weight: 700;
+}
+h3{
+    color: #0056b3;
+    font-weight: 900;
+    font-size: 25px;
+
+}
+.rezev{
+    width: 100%;
+    background-color: #0056b3;
+    font-family: 'vazir';
+    font-size: x-large;
+
+}
+@media(max-width:501px){
+    .info{
+        width: 80%;
+    }
+    
+}
+.money{
+    display: inline;
+    color: green;
+    font-weight: bolder;
+    font-size: 17px;
 }

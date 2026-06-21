@@ -3,6 +3,7 @@ let welcom=document.getElementById("welcom")
 let button_one=document.getElementById('button_one')
 let support=document.getElementById('support')
 let box_support=document.getElementById('box_support')
+let container=document.getElementById('container')
 
 new Swiper(swiper,{
     loop:true,
@@ -106,3 +107,36 @@ function show_support() {
 support.addEventListener('click',show_support)
 
 
+
+function all_tour() {
+    fetch('http://127.0.0.1:8000/Account_user/show_all_tourist/').then(
+        function (response) {
+            return response.json()
+            
+        }
+    ).then(
+        function (show_all_tourist) {
+            console.log(show_all_tourist)
+            container.innerHTML=''
+            show_all_tourist['result'].forEach(data => {
+                let box=document.createElement('div')
+                box.style.display='flex'
+                box.style.boxShadow='0 0 5px blue'
+                box.style.width='fit-content'
+                box.style.flexWrap='wrap'
+                box.style.width="100%"
+                
+                data['image'].forEach(im => {
+                    box.innerHTML+=`<div class="image_tourist" ><img src="../jango/${im}" alt="" class="img"></div>`
+                });
+                box.innerHTML+=`<div class="info"><h3>📍 نام مکان : <h4 style="display: inline;">${data['name_place']}</h4></h3> <hr>  <h3> ⏳ توضیحات : <h4 style="display: inline;">${data['expresion']}</h4></h3> <hr> <h3> 💵 قیمت  : <h4 style="display: inline;">${data['price']} <h5 class="money">تومان <\h5> </h4></h3>   <hr>   <button class="rezev">رزرو تور </button> <hr> <p>${data["id"]}<\p>     </div> `
+                container.append(box)
+            
+            });
+           
+            
+        }
+    )
+    
+}
+window.onload=all_tour

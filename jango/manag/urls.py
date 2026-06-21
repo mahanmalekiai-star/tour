@@ -9,5 +9,6 @@ urlpatterns=[
     path('answer_to_user/',answer_to_user),
     path('show_number_message/',show_number_message),
     path('send_sms/',send_sms),
-    path('save_tour/',save_tour)
+    path('save_tour/',save_tour),
+    path('delet_countent/',delet_countent)
 ]

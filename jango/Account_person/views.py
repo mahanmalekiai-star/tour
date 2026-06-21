@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_GET ,require_POST
 from login.models import *
 import json
-from login.models import *
+from manag.models import *
 
 @require_GET
 def name_user(request):
@@ -32,4 +32,30 @@ def get_sms(request):
         return JsonResponse({
             'result':False
         })
+    
+def show_all_tourist(request):
+    data=[]
+    
+    for i in upload_tourist.objects.all():
+        money=int(i.price)
+        image=[]
+        for j in upload_image.objects.all().filter(witch_tour=i.id):
+            image.append(j.image.url)
+            print(j.image.url)
+        data.append({
+            'id':i.id,
+            'name_place':i.name_place,
+            'expresion':i.expresion,
+            'price':format(money,','),
+            "image":image
+        })
+    print(data)
+
+   
+    return JsonResponse({
+        'result':data
+    })
+
+
+
 # Create your views here.

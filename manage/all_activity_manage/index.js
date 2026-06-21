@@ -4,6 +4,7 @@ let number=document.getElementById('number')
 let new_message=document.getElementById('new_message')
 let container_new_message=document.getElementById('container_new_message')
 let create_tour=document.getElementById('create_tour')
+let deleete=document.getElementById('delete')
 
 function all_message() {
     fetch('http://127.0.0.1:8000/manage/show_number_message').then(
@@ -79,3 +80,40 @@ function tour() {
     
 }
 create_tour.addEventListener('click',tour)
+
+
+function delete_content() {
+    let id=document.getElementById('id').value
+    console.log(id)
+    let data={'id':id}
+    console.log(data)
+    fetch('http://127.0.0.1:8000/manage/delet_countent/',{
+        method:"POST",
+        headers:{
+            'Content-type':'application\json'
+        },
+        body:JSON.stringify(data)
+    })
+    document.getElementById('id').value=''
+   
+    
+}
+
+function delete_message() {
+    container_new_message.innerHTML=`
+        <div class="box_close">
+        <button id="close">❌</button>
+        </div >
+        <div class="id"><textarea rows="1" class="input" id="id" placeholder="شماره محتوا  "></textarea></div>
+        <div class="submit">
+        <button id="submit">ارسال</button>
+        </div>
+    `
+    let closee=document.getElementById('close')
+    closee.addEventListener('click',clean)
+
+    let submit=document.getElementById('submit')
+    submit.addEventListener('click',delete_content)
+    
+}
+deleete.addEventListener('click',delete_message)

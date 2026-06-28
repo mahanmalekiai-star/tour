@@ -10,5 +10,9 @@ urlpatterns=[
     path('show_number_message/',show_number_message),
     path('send_sms/',send_sms),
     path('save_tour/',save_tour),
-    path('delet_countent/',delet_countent)
+    path('delet_countent/',delet_countent),
+    path('save_tour_dongi/',save_tour_dongi),
+    path('select_string/',select_string),
+    path('show_info_select_data/',show_info_select_data),
+    path('update_content/',update_content)
 ]

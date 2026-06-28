@@ -1,0 +1,64 @@
+<!DOCTYPE html> <html lang="fa"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Update Background</title> <style> * { margin: 0; padding: 0; box-sizing: border-box; } body { width: 100vw; height: 100vh; overflow: hidden; background: #060b14; font-family: 'Segoe UI', sans-serif; } canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; } /* SVG overlay elements */ .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; } /* Center ring pulse */ .ring-container { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; } .ring { position: absolute; border-radius: 50%; border: 1px solid rgba(0, 200, 255, 0.15); top: 50%; left: 50%; transform: translate(-50%, -50%); animation: pulse 4s ease-out infinite; } .ring:nth-child(1) { width: 100px; height: 100px; animation-delay: 0s; } .ring:nth-child(2) { width: 200px; height: 200px; animation-delay: 0.8s; } .ring:nth-child(3) { width: 320px; height: 320px; animation-delay: 1.6s; } .ring:nth-child(4) { width: 460px; height: 460px; animation-delay: 2.4s; } .ring:nth-child(5) { width: 620px; height: 620px; animation-delay: 3.2s; } @keyframes pulse { 0% { opacity: 0; transform: translate(-50%, -50%) scale(0.6); } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.1); } } /* Center icon */ .center-icon { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; border-radius: 50%; background: radial-gradient(circle, rgba(0,180,255,0.15) 0%, rgba(0,80,180,0.05) 100%); border: 1.5px solid rgba(0,200,255,0.5); display: flex; align-items: center; justify-content: center; pointer-events: none; } .center-icon svg { width: 34px; height: 34px; opacity: 0.85; animation: spin 6s linear infinite; } @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } } /* Floating data badges */ .badge { position: fixed; padding: 6px 14px; border: 1px solid rgba(0,200,255,0.2); border-radius: 4px; background: rgba(0,15,35,0.6); color: rgba(0,200,255,0.6); font-size: 11px; letter-spacing: 1.5px; font-family: 'Courier New', monospace; animation: floatBadge 8s ease-in-out infinite; pointer-events: none; } .badge:nth-child(1) { top: 18%; left: 12%; animation-delay: 0s; } .badge:nth-child(2) { top: 22%; right: 14%; animation-delay: 1.5s; } .badge:nth-child(3) { bottom: 20%; left: 10%; animation-delay: 3s; } .badge:nth-child(4) { bottom: 18%; right: 12%; animation-delay: 4.5s; } .badge:nth-child(5) { top: 50%; left: 6%; animation-delay: 2s; } .badge:nth-child(6) { top: 48%; right: 6%; animation-delay: 3.5s; } @keyframes floatBadge { 0%, 100% { opacity: 0.4; transform: translateY(0); } 50% { opacity: 0.85; transform: translateY(-8px); } } /* Corner brackets */ .corner { position: fixed; width: 50px; height: 50px; border-color: rgba(0,200,255,0.35); border-style: solid; pointer-events: none; } .corner-tl { top: 24px; left: 24px; border-width: 2px 0 0 2px; } .corner-tr { top: 24px; right: 24px; border-width: 2px 2px 0 0; } .corner-bl { bottom: 24px; left: 24px; border-width: 0 0 2px 2px; } .corner-br { bottom: 24px; right: 24px; border-width: 0 2px 2px 0; } /* Scanline subtle effect */ .scanline { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient( 0deg, transparent, transparent 3px, rgba(0, 0, 0, 0.04) 3px, rgba(0, 0, 0, 0.04) 4px ); pointer-events: none; } </style> </head> <body> <canvas id="bg"></canvas> <!-- Pulse rings --> <div class="ring-container"> <div class="ring"></div> <div class="ring"></div> <div class="ring"></div> <div class="ring"></div> <div class="ring"></div> </div> <!-- Center update icon --> <div class="center-icon"> <svg viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"> <polyline points="23 4 23 10 17 10"/> <polyline points="1 20 1 14 7 14"/> <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/> </svg> </div>
+<!-- Floating badges --> <div class="badge">v2.4.1 STABLE</div> <div class="badge">SYNC: 100%</div> <div class="badge">BUILD READY</div> <div class="badge">DEPLOY OK</div> <div class="badge">PATCH LIVE</div> <div class="badge">CHANGELOG</div> <!-- Corner brackets --> <div class="corner corner-tl"></div> <div class="corner corner-tr"></div> <div class="corner corner-bl"></div> <div class="corner corner-br"></div> <!-- Scanlines --> <div class="scanline"></div> <script> const canvas = document.getElementById('bg'); const ctx = canvas.getContext('2d'); let W, H, nodes = [], particles = []; function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; } resize(); window.addEventListener('resize', () => { resize(); init(); }); // ── Node network ── function init() { nodes = []; const count = Math.floor((W * H) / 18000); for (let i = 0; i < count; i++) { nodes.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25, r: Math.random() * 1.5 + 0.5, alpha: Math.random() * 0.5 + 0.3 }); } } init(); // ── Streaming data particles ── function spawnParticle() { const side = Math.floor(Math.random() * 4); let x, y, vx, vy; if (side === 0) { x = Math.random()*W; y = -5; vx = (Math.random()-0.5)*0.5; vy = Math.random()*0.8+0.3; } if (side === 1) { x = W+5; y = Math.random()*H; vx = -(Math.random()*0.8+0.3); vy = (Math.random()-0.5)*0.5; } if (side === 2) { x = Math.random()*W; y = H+5; vx = (Math.random()-0.5)*0.5; vy = -(Math.random()*0.8+0.3); } if (side === 3) { x = -5; y = Math.random()*H; vx = Math.random()*0.8+0.3; vy = (Math.random()-0.5)*0.5; } particles.push({ x, y, vx, vy, life: 1, size: Math.random()*2+1 }); } setInterval(spawnParticle, 120); function draw() { ctx.clearRect(0, 0, W, H); // Deep space bg const bg = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, Math.max(W,H)*0.75); bg.addColorStop(0, 'rgba(5,18,40,1)'); bg.addColorStop(0.5, 'rgba(4,12,28,1)'); bg.addColorStop(1, 'rgba(3,7,16,1)'); ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H); // Move nodes nodes.forEach(n => { n.x += n.vx; n.y += n.vy; if (n.x < 0  n.x > W) n.vx *= -1; if (n.y < 0  n.y > H) n.vy *= -1; }); // Draw edges const DIST = 130; for (let i = 0; i < nodes.length; i++) { for (let j = i+1; j < nodes.length; j++) { const dx = nodes[i].x - nodes[j].x; const dy = nodes[i].y - nodes[j].y; const d = Math.sqrt(dx*dx + dy*dy); if (d < DIST) { const a = (1 - d/DIST) * 0.12; ctx.beginPath(); ctx.moveTo(nodes[i].x, nodes[i].y); ctx.lineTo(nodes[j].x, nodes[j].y); ctx.strokeStyle = rgba(0,160,240,${a}); ctx.lineWidth = 0.6; ctx.stroke(); } } } // Draw nodes nodes.forEach(n => { ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI*2); ctx.fillStyle = rgba(0,200,255,${n.alpha}); ctx.fill(); }); // Draw particles particles = particles.filter(p => p.life > 0); particles.forEach(p => { p.x += p.vx; p.y += p.vy; p.life -= 0.005; ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI*2); ctx.fillStyle = rgba(0,220,255,${p.life * 0.6}); ctx.fill(); }); requestAnimationFrame(draw); } draw(); </script> </body> </html>
+
+<!------------------------------------------------------------------------------------------------------->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="update.css">
+    <title></title>
+</head>
+<body>
+  
+      <form class="tour" id="tour">
+            <div>
+                <div>
+                    <h4>بروز رسانی </h4>
+                </div>
+                <div>
+                    <label for="witch_part">کدام قسمت </label>
+                    <select id="witch_part" >
+                        <option value="" disabled selected>انتخاب کنید</option>
+                        <option value="tour" id="one" >تور</option>
+                        <option value="dongi" >دونگی</option>
+                      
+                    </select>
+                </div>
+                <div>
+                    <label for="witch_number" >کدام گزینه  </label>
+                    <select id="witch_number" >
+                        <option value="" disabled selected>انتخاب کنید</option>
+                      
+                    </select>
+                   
+                </div>
+                <div>
+                    <button class="forward" id="forward">ادامه </button>
+                </div>
+                <div class="container" id="container"></div>
+                <div class="container_two" id="container_two"></div>
+                <div class="content_image" id="content_image">
+                    <h5>جهت عوض کردن عکس با کلیک روی دکمه زیر عکس جدید را انتخاب کنید ، سپس در باکس پایین عکس قدیمی انتخاب شده </h5>
+                    <label for="choice_file" class="label_choice_file">انتخاب عکس جدید </label>
+                    <input type="file" id="choice_file" class="choice_file" >
+                    <div>
+                        <input type="number" placeholder="عدد عکس مورد نظر " id="number_image" class="number_image">
+                    </div>
+                </div>
+                <div class="all_button" id="all_button">
+                    <div>
+                        <button class="two_button" id="submit">ثبت تغییرات </button>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+    
+</body>
+</html>
+<script src="update.js"></script>

@@ -25,6 +25,7 @@ function com(event) {
             }
             else{
                 window.location.assign('../Account_person/Account_person.html')
+                localStorage.setItem('token',come_account['token'])
             }
             
         }

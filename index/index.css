@@ -173,8 +173,10 @@ img{
     width: 100%;
     text-align: center;
     margin-top: 90px;
+    
+    
+   
 }
-
 
 .img{
     border-radius: 20px;
@@ -299,4 +301,182 @@ img{
     width: 100px;
     height: fit-content;
     margin-left: 90%;
+}
+
+@keyframes bord{
+    0%{
+        box-shadow:0 10px 25px #005a61;
+        box-shadow:0 10px 25px #009154 ;
+        box-shadow:0 10px 25px #03b7c4 ;
+        box-shadow:0 10px 25px #2ebe6a ;
+    }
+    10%{
+      
+        
+        box-shadow:0 10px 25px #009154 ;
+        box-shadow:0 10px 25px #005a61;
+        box-shadow:0 10px 25px #2ebe6a ;
+        box-shadow:0 10px 25px #03b7c4 ;
+    }
+    20%{
+       
+        
+        box-shadow:0 10px 25px #009154 ;
+        box-shadow:0 10px 25px #03b7c4 ;
+        box-shadow:0 10px 25px #2ebe6a ;
+        box-shadow:0 10px 25px #005a61;
+       
+        
+    }
+    30%{
+        box-shadow:0 10px 25px #03b7c4 ;
+        box-shadow:0 10px 25px #009154 ;
+        box-shadow:0 10px 25px #005a61;
+        box-shadow:0 10px 25px #2ebe6a ;
+        
+        
+    }
+    40%{
+        box-shadow:0 10px 25px #005a61;
+        box-shadow:0 10px 25px #03b7c4 ;
+        box-shadow:0 10px 25px #2ebe6a ;
+        box-shadow:0 10px 25px #009154 ;
+    }
+    50%{
+        box-shadow:0 10px 25px #2ebe6a ;
+        box-shadow:0 10px 25px #005a61;
+       
+        
+        box-shadow:0 10px 25px #009154 ;
+         box-shadow:0 10px 25px #03b7c4 ;
+        
+    }
+    60%{
+      
+        
+        box-shadow:0 10px 25px #009154 ;
+        box-shadow:0 10px 25px #005a61;
+        box-shadow:0 10px 25px #2ebe6a ;
+        box-shadow:0 10px 25px #03b7c4 ;
+    }
+    70%{
+       
+        
+        box-shadow:0 10px 25px #009154 ;
+        box-shadow:0 10px 25px #03b7c4 ;
+        box-shadow:0 10px 25px #2ebe6a ;
+        box-shadow:0 10px 25px #005a61;
+       
+        
+    }
+    80%{
+        box-shadow:0 10px 25px #03b7c4 ;
+        box-shadow:0 10px 25px #009154 ;
+        box-shadow:0 10px 25px #005a61;
+        box-shadow:0 10px 25px #2ebe6a ;
+        
+        
+    }
+    90%{
+        box-shadow:0 10px 25px #005a61;
+        box-shadow:0 10px 25px #03b7c4 ;
+        box-shadow:0 10px 25px #2ebe6a ;
+        box-shadow:0 10px 25px #009154 ;
+    }
+    100%{
+        box-shadow:0 10px 25px #2ebe6a ;
+        box-shadow:0 10px 25px #005a61;
+       
+        
+        box-shadow:0 10px 25px #009154 ;
+         box-shadow:0 10px 25px #03b7c4 ;
+        
+    }
+
+}
+
+.suggestion{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+    animation: bord 3s infinite;
+   background-color: #004B49 ;
+   height: fit-content;
+   overflow-x: scroll;
+   display: flex;
+   direction: rtl;
+  
+}
+.image_tourist{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+   
+}
+@keyframes gradientMove{
+    0%{
+        background: linear-gradient(90deg,#005a61,#03b7c4,#2ebe6a);
+    }
+    10%{
+         background: linear-gradient(90deg,#005a61,#2ebe6a,#03b7c4,);
+    }
+    20%{
+        background: linear-gradient(90deg,#03b7c4,#005a61,#2ebe6a);
+    }
+    30%{
+        background: linear-gradient(90deg,#03b7c4,#2ebe6a,#005a61);
+    }
+    40%{
+         background: linear-gradient(90deg,#2ebe6a,#005a61,#03b7c4);
+    }
+    50%{
+        background: linear-gradient(90deg,#2ebe6a,#03b7c4,#005a61);
+    }
+    60%{
+         background: linear-gradient(90deg,#005a61,#2ebe6a,#03b7c4,);
+    }
+    70%{
+        background: linear-gradient(90deg,#03b7c4,#005a61,#2ebe6a);
+    }
+    80%{
+        background: linear-gradient(90deg,#03b7c4,#2ebe6a,#005a61);
+    }
+    90%{
+         background: linear-gradient(90deg,#2ebe6a,#005a61,#03b7c4);
+    }
+    100%{
+        background: linear-gradient(90deg,#2ebe6a,#03b7c4,#005a61);
+    }
+}
+.img{
+    width: 100%;
+    padding: 5px;
+    height: 100%;
+    text-decoration: none;
+    font-family: 'vazir';
+    color: rgb(231, 231, 231);
+    font-weight: bolder;
+    animation: gradientMove 3s infinite;
+}
+.info{
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 0 0 5px black;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+@media(max-width:615px){
+    .suggestion{
+        height: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow-y: visible;
+       
+    }
+    .expresion{
+        font-size: 17px;
+    }
 }

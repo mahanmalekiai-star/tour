@@ -17,6 +17,93 @@ body{
    background-repeat: no-repeat;
 }
 
+
+@keyframes bord{
+    0%{
+        box-shadow:0 10px 25px #e68a19;
+        box-shadow:0 10px 25px #f5d310 ;
+        box-shadow:0 10px 25px #ec5934 ;
+        box-shadow:0 10px 25px #f87306 ;
+    }
+    10%{
+      
+        box-shadow:0 10px 25px #f5d310 ;
+        box-shadow:0 10px 25px #e68a19;
+        box-shadow:0 10px 25px #f87306 ;
+        box-shadow:0 10px 25px #ec5934 ;
+    }
+    20%{
+       
+        
+        box-shadow:0 10px 25px #f87306 ;
+        box-shadow:0 10px 25px #ec5934 ;
+        box-shadow:0 10px 25px #f5d310 ;
+        box-shadow:0 10px 25px #e68a19;
+        
+    }
+    30%{
+        box-shadow:0 10px 25px #ec5934 ;
+        box-shadow:0 10px 25px #e68a19;
+        box-shadow:0 10px 25px #f87306 ;
+        box-shadow:0 10px 25px #f5d310 ;
+       
+        
+    }
+    40%{
+         box-shadow:0 10px 25px #f5d310 ;
+        box-shadow:0 10px 25px #e68a19;
+        box-shadow:0 10px 25px #f87306 ;
+         box-shadow:0 10px 25px #ec5934 ;
+    }
+    50%{
+         box-shadow:0 10px 25px #f87306 ;
+         box-shadow:0 10px 25px #f5d310 ;
+         box-shadow:0 10px 25px #ec5934 ;
+          box-shadow:0 10px 25px #e68a19;
+        
+    }
+    60%{
+      
+        box-shadow:0 10px 25px #f5d310 ;
+        box-shadow:0 10px 25px #e68a19;
+        box-shadow:0 10px 25px #f87306 ;
+        box-shadow:0 10px 25px #ec5934 ;
+    }
+    70%{
+       
+        
+        box-shadow:0 10px 25px #f87306 ;
+        box-shadow:0 10px 25px #ec5934 ;
+        box-shadow:0 10px 25px #f5d310 ;
+        box-shadow:0 10px 25px #e68a19;
+        
+    }
+    80%{
+        box-shadow:0 10px 25px #ec5934 ;
+        box-shadow:0 10px 25px #e68a19;
+        box-shadow:0 10px 25px #f87306 ;
+        box-shadow:0 10px 25px #f5d310 ;
+       
+        
+    }
+    90%{
+         box-shadow:0 10px 25px #f5d310 ;
+        box-shadow:0 10px 25px #e68a19;
+        box-shadow:0 10px 25px #f87306 ;
+         box-shadow:0 10px 25px #ec5934 ;
+    }
+    100%{
+         box-shadow:0 10px 25px #f87306 ;
+         box-shadow:0 10px 25px #f5d310 ;
+         box-shadow:0 10px 25px #ec5934 ;
+          box-shadow:0 10px 25px #e68a19;
+        
+    }
+
+}
+
+
+
 form{
     max-width: 50%;
     margin-left: auto;
@@ -24,9 +111,11 @@ form{
     border: 2px solid green;
     background-color: rgba(255,255,255,0.25);
     backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,255,255,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
     border-radius: 25px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    animation: bord 3s infinite;
 }
 @media(max-width:450px){
     form{

@@ -105,6 +105,7 @@ button:hover{
     margin-left: auto;
     margin-right: auto;
     flex-wrap: wrap;
+    margin-top: 90px;
     height: 100%;
 }
 .all_buttons{
@@ -328,4 +329,196 @@ h3{
     color: green;
     font-weight: bolder;
     font-size: 17px;
+}
+h5{
+    padding: 13px;
+    padding-right: 25px;
+    font-family: 'vazir';
+    font-weight: 800;
+    font-size: larger;
+}
+.container_user{
+    border-radius: 12px;
+    background-color: #ffff;
+    color: #333;
+    box-shadow: 0 10px 25px rgba(0, 0, 0,0.4);
+    border: 1px solid #acd3da;
+    width: 50%;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    direction: rtl;
+    margin-top: 80px;
+}
+/* .box_upload{
+    border: 2px solid green;
+    width: 100%;
+} */
+
+@keyframes bord{
+    0%{
+        box-shadow:0 10px 25px #64b5f6;
+        box-shadow:0 10px 25px #cc56e0 ;
+        box-shadow:0 10px 25px #8f3af1;
+    }
+    10%{
+        box-shadow:0 10px 25px #64b5f6;
+        box-shadow:0 10px 25px #8f3af1 ;
+        box-shadow:0 10px 25px #cc56e0;
+    }
+    20%{
+        box-shadow:0 10px 25px #cc56e0;
+        box-shadow:0 10px 25px #64b5f6 ;
+        box-shadow:0 10px 25px #8f3af1;
+        
+    }
+    30%{
+       
+         box-shadow:0 10px 25px #cc56e0;
+         box-shadow:0 10px 25px #8f3af1 ;
+         box-shadow:0 10px 25px #64b5f6;
+    }
+    40%{
+         box-shadow:0 10px 25px #8f3af1;
+         box-shadow:0 10px 25px #cc56e0 ;
+         box-shadow:0 10px 25px #64b5f6;
+    }
+    50%{
+       
+         box-shadow:0 10px 25px #8f3af1;
+         box-shadow:0 10px 25px #64b5f6 ;
+         box-shadow:0 10px 25px #cc56e0;
+        
+    }
+    60%{
+        box-shadow:0 10px 25px #64b5f6;
+        box-shadow:0 10px 25px #8f3af1 ;
+        box-shadow:0 10px 25px #cc56e0;
+    }
+    70%{
+        box-shadow:0 10px 25px #cc56e0;
+        box-shadow:0 10px 25px #64b5f6 ;
+        box-shadow:0 10px 25px #8f3af1;
+        
+    }
+    80%{
+       
+         box-shadow:0 10px 25px #cc56e0;
+         box-shadow:0 10px 25px #8f3af1 ;
+         box-shadow:0 10px 25px #64b5f6;
+    }
+    90%{
+         box-shadow:0 10px 25px #8f3af1;
+         box-shadow:0 10px 25px #cc56e0 ;
+         box-shadow:0 10px 25px #64b5f6;
+    }
+    100%{
+       
+         box-shadow:0 10px 25px #8f3af1;
+         box-shadow:0 10px 25px #64b5f6 ;
+         box-shadow:0 10px 25px #cc56e0;
+        
+    }
+
+}
+#sugestions{
+    width: 70%;
+    box-shadow: none;
+    animation: bord 10s infinite;
+    border-radius: 10px;
+}
+@media(max-width:450px){
+    #sugestions{
+        width: 90%;
+    }
+}
+.upload_img{
+    display: none;
+
+    
+}
+@keyframes gradientMove{
+    0%{
+        background: linear-gradient(90deg,#64b5f6,#cc56e0,#8f3af1);
+    }
+    10%{
+         background: linear-gradient(90deg,#64b5f6,#8f3af1,#cc56e0,);
+    }
+    20%{
+        background: linear-gradient(90deg,#cc56e0,#64b5f6,#8f3af1);
+    }
+    30%{
+        background: linear-gradient(90deg,#cc56e0,#8f3af1,#64b5f6);
+    }
+    40%{
+         background: linear-gradient(90deg,#8f3af1,#cc56e0,#64b5f6);
+    }
+    50%{
+        background: linear-gradient(90deg,#8f3af1,#64b5f6,#cc56e0);
+    }
+    60%{
+         background: linear-gradient(90deg,#64b5f6,#8f3af1,#cc56e0,);
+    }
+    70%{
+        background: linear-gradient(90deg,#cc56e0,#64b5f6,#8f3af1);
+    }
+    80%{
+        background: linear-gradient(90deg,#cc56e0,#8f3af1,#64b5f6);
+    }
+    90%{
+         background: linear-gradient(90deg,#8f3af1,#cc56e0,#64b5f6);
+    }
+    100%{
+        background: linear-gradient(90deg,#8f3af1,#64b5f6,#cc56e0);
+    }
+}
+label{
+    
+    box-shadow: 0 0px 5px rgb(66, 66, 66);
+    border-radius: 10px;
+    padding: 4px;
+    cursor: pointer;
+    font-family: 'vazir';
+    font-size: larger;
+    animation: gradientMove 6s infinite;
+}
+.sugestions{
+    margin-top: 30px;
+}
+textarea{
+    font-family: 'vazir';
+    text-align: center;
+    border: none;
+    font-size: larger;
+    box-shadow: 0 0 5px black;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: 0.3s;
+
+}
+textarea:hover{
+    transform: translateY(-5px);
+}
+textarea:focus{
+     box-shadow: 0 0 10px black;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-8px);
+
+}
+
+.upload{
+    background-color: #64b5f6;
+    width: 30%;
+    font-family: 'vazir';
+    font-weight: bolder;
+    font-size: larger;
+
+}
+.box_message{
+    direction: rtl;
+    text-align: center;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }

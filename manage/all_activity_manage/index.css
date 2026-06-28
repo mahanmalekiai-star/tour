@@ -113,6 +113,7 @@ h5{
   
     align-items: center;
     justify-content: center;
+    margin-top: 30px;
 }
 .input{
     text-align: center;
@@ -149,4 +150,26 @@ h5{
 }
 textarea{
     resize: none;
+}
+h5{
+    border-radius: 100%;
+}
+@font-face{
+    font-family: 'vazir';
+    src: url(../../font/Vazir-Light.ttf);
+}
+.guid{
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+h4{
+    font-family: 'vazir';
+    font-size: larger;
+    font-weight: bolder;
+    color: rgb(33, 46, 42);
+    text-shadow: 0 0 5px #1effff;
+
 }

@@ -29,7 +29,7 @@ def login(request):
             name=data['name'],
             number=data['number'],
             age=data['age'],
-            password=data['password'].strip(),
+            password=data['password'].strip().lower(),
             gender=data['gender'],
             accept=data['accept'],
             regestration=date.today().strftime('%Y-%m-%d')

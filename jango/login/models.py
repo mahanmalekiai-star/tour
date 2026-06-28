@@ -10,6 +10,9 @@ class users(models.Model):
 class SMS_user(models.Model):
     text=models.CharField(max_length=400)
     user=models.ForeignKey(users,on_delete=models.CASCADE,to_field='number')
+class commnts_user(models.Model):
+    text=models.TextField()
+    user=models.ForeignKey(users,on_delete=models.CASCADE)
 
 
 

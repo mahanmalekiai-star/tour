@@ -183,10 +183,133 @@ def save_tour(request):
 def delet_countent(request):
     data=json.loads(request.body)
     print(data)
-    data=upload_tourist.objects.filter(id=data['id'])
-    data.delete()
+    if data['content']=='1':
+        data=upload_tourist.objects.filter(id=data['id'])
+        data.delete()
+        print('lololololololo')
+        return JsonResponse({
+            'result':True
+        })
+    else:
+        data=upload_tourist_dongi.objects.filter(id=data['id'])
+        data.delete()
+        return JsonResponse({
+            'result':True
+        })
+
+
+@csrf_exempt
+@require_POST  
+def save_tour_dongi(request):
+    files=request.FILES.getlist('file')
+    name_place_two=request.POST.get('name_place_two')
+    expresion_two=request.POST.get('expresion_two')
+    price_two=request.POST.get('price_two')
+    upload_tourist_dongi.objects.create(
+        name_place=name_place_two,
+        expresion=expresion_two,
+        price=price_two
+    )
+    data=upload_tourist_dongi.objects.latest('id')
     
 
-# def upolad_file(reqest):
+    for i in files:
+        upload_image.objects.create(
+            image=i,
+            witch_tour_two=data
+        )
+
+    return JsonResponse({
+        'result':True
+    })
+
+@csrf_exempt
+@require_POST
+def select_string(requets):
+    data=json.loads(requets.body)
+    print(data)
+    if data['text']=='dongi':
+        number=[]
+        for i in upload_tourist_dongi.objects.all():
+            number.append(i.id)
+        return JsonResponse({
+            'result':number
+        })
+    elif data['text']=='tour':
+        number=[]
+        for i in upload_tourist.objects.all():
+            number.append(i.id)
+        return JsonResponse({
+            'result':number
+        })
+@csrf_exempt
+@require_POST
+def show_info_select_data(request):
+    data=json.loads(request.body)
+    if data['part']=='tour':
+        data=upload_tourist.objects.get(id=data['number'])
+        imag=[]
+        price=int(data.price)
+        
+        for i in upload_image.objects.all().filter(witch_tour=data.id):
+            imag.append({
+                'id':i.id,
+                'image':i.image.url
+            })
+        print(imag)
+        return JsonResponse({
+            'name_place':data.name_place,
+            'expression':data.expresion,
+            'price':round(data.price),
+            'image':imag
+        })
+        
+
+    else:
+        data=upload_tourist_dongi.objects.get(id=data['number'])
+        imag=[]
+        for i in upload_image.objects.all().filter(witch_tour_two=data.id):
+            imag.append({
+                'id':i.id,
+                'image':i.image.url
+            })
+        return JsonResponse({
+            'name_place':data.name_place,
+            'expression':data.expresion,
+            'price':round(data.price),
+            'image':imag
+        })
+    
+@csrf_exempt
+@require_POST
+def update_content(request):
+    if request.POST['witch_part']=='tour':
+        data=upload_tourist.objects.filter(id=request.POST['witch_number'])
+        data.update(name_place=request.POST['one'],expresion=request.POST['two'],price=request.POST['three'])
+        if request.POST['number_image']!='' and request.FILES['choice_file']!='':
+            file=request.FILES['choice_file']
+            print(file.read())
+            data_imag=upload_image.objects.get(id=request.POST['number_image'])
+            data_imag.image=file
+            data_imag.save()
+    else:
+        data=upload_tourist_dongi.objects.filter(id=request.POST['witch_number'])
+        data.update(name_place=request.POST['one'],expresion=request.POST['two'],price=request.POST['three'])
+        if request.POST['number_image']!='' and request.FILES['choice_file']!='':
+            file=request.FILES['choice_file']
+            print(file.read())
+            data_imag=upload_image.objects.get(id=request.POST['number_image'])
+            data_imag.image=file
+            data_imag.save()
+    return JsonResponse({
+        'result':True
+    })
+
+
+
+
+
+
+
 
 # Create your views here.

@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title></title>
 </head>
-<body >
+<body id="body">
     <div class="all">
         <div class="a_right">
              <div class="right">
@@ -18,11 +18,11 @@
                 <div class="all_buttons">
                     <!-- <button>حساب کاربری</button>
                     <button>نظر سنجی </button> -->
-                    <a href="">حساب کاربری </a>
-                    <a href="">نظر سنجی </a>
+                    <a href="#user">حساب کاربری </a>
+                    <a href="#sugestions">نظر سنجی </a>
                    <!-- <button id="button_one">رزو تور</button>  -->
                     <a href="#container" >رزو تور</a>
-                    <a href="">رزو تور دونگی </a>
+                    <a href="#container_two">رزو تور دونگی </a>
                     <!-- <button>رزو تور دونگی </button>
                     <button>تور های رزرو شده </button> -->
                     <a href="">تور های رزرو شده </a>
@@ -45,6 +45,32 @@
         </div>
     </div>
     <div class="container" id="container"></div>
+    <div class="container" id="container_two"></div>
+    <div class="container" id="sugestions">
+        <div>
+            <h5>فقط دو عکس یا ویدیو را میتوانید آپلود کنید </h5>
+        </div>
+        <div class="box_upload">
+            <label for="upload_img">آپلود عکس سفر هاتون</label>
+            <input type="file" id="upload_img" class="upload_img" multiple >
+        </div>
+        <div class="sugestions">
+            <textarea name="" id="text" rows="1" placeholder="نظر خود را بنویسید "></textarea>
+        </div>
+        <div class="button_upload">
+            <button class="upload" id="upload">آپلود</button>
+        </div>
+        <div class="box_message" id="box_message">
+
+        </div>
+     </div>
+    <div class="container_user" id="user">
+        <h5 class="info_user" id="info_user_name">مشخصات : </h5>
+        <h5 class="info_user" id="info_user_number">شماره تلفن : </h5>
+        <h5 class="info_user" id="info_user_regestration">زمان ثبت نام : </h5>
+        <h5 class="info_user" id="info_user_rezerve">سفر های رزرو شده : </h5>
+    </div>
+
 
 
   

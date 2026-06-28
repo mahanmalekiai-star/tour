@@ -1,0 +1,329 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-y: scroll;
+}
+@font-face{
+    font-family: 'vazir';
+    src: url(../../../font/Vazir-Light.ttf);
+}
+@keyframes bord{
+    0%{
+        box-shadow:0 10px 25px #64b5f6;
+        box-shadow:0 10px 25px #cc56e0 ;
+        box-shadow:0 10px 25px #8f3af1;
+    }
+    10%{
+        box-shadow:0 10px 25px #64b5f6;
+        box-shadow:0 10px 25px #8f3af1 ;
+        box-shadow:0 10px 25px #cc56e0;
+    }
+    20%{
+        box-shadow:0 10px 25px #cc56e0;
+        box-shadow:0 10px 25px #64b5f6 ;
+        box-shadow:0 10px 25px #8f3af1;
+        
+    }
+    30%{
+       
+         box-shadow:0 10px 25px #cc56e0;
+         box-shadow:0 10px 25px #8f3af1 ;
+         box-shadow:0 10px 25px #64b5f6;
+    }
+    40%{
+         box-shadow:0 10px 25px #8f3af1;
+         box-shadow:0 10px 25px #cc56e0 ;
+         box-shadow:0 10px 25px #64b5f6;
+    }
+    50%{
+       
+         box-shadow:0 10px 25px #8f3af1;
+         box-shadow:0 10px 25px #64b5f6 ;
+         box-shadow:0 10px 25px #cc56e0;
+        
+    }
+    60%{
+        box-shadow:0 10px 25px #64b5f6;
+        box-shadow:0 10px 25px #8f3af1 ;
+        box-shadow:0 10px 25px #cc56e0;
+    }
+    70%{
+        box-shadow:0 10px 25px #cc56e0;
+        box-shadow:0 10px 25px #64b5f6 ;
+        box-shadow:0 10px 25px #8f3af1;
+        
+    }
+    80%{
+       
+         box-shadow:0 10px 25px #cc56e0;
+         box-shadow:0 10px 25px #8f3af1 ;
+         box-shadow:0 10px 25px #64b5f6;
+    }
+    90%{
+         box-shadow:0 10px 25px #8f3af1;
+         box-shadow:0 10px 25px #cc56e0 ;
+         box-shadow:0 10px 25px #64b5f6;
+    }
+    100%{
+       
+         box-shadow:0 10px 25px #8f3af1;
+         box-shadow:0 10px 25px #64b5f6 ;
+         box-shadow:0 10px 25px #cc56e0;
+        
+    }
+
+   
+} 
+@font-face{
+    font-family: 'vazir';
+    src: url(../../../font/Vazir-Light.ttf);
+}
+@font-face{
+    font-family:'iran';
+    src: url(../../../font/irsans_P30Day.com.ttf);
+}
+body{
+    align-content: center;
+    justify-items: center;
+    
+}
+
+
+
+h4,label{
+    font-family: 'vazir';
+}
+h4{
+    font-size: xx-large;
+    display: inline;
+    
+}
+.tour{
+    width: 60%;
+    padding: 30px;
+    text-align: center;
+   
+   background: transparent;
+   backdrop-filter: blur(3px);
+    border-radius: 25px;
+    color: #d9fff4;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+    margin-bottom: 10px;
+   animation: bord 4s infinite;
+}
+@keyframes gradientMove{
+    0%{
+        background: linear-gradient(90deg,#005a61,#03b7c4,#2ebe6a);
+    }
+    10%{
+         background: linear-gradient(90deg,#005a61,#2ebe6a,#03b7c4,);
+    }
+    20%{
+        background: linear-gradient(90deg,#03b7c4,#005a61,#2ebe6a);
+    }
+    30%{
+        background: linear-gradient(90deg,#03b7c4,#2ebe6a,#005a61);
+    }
+    40%{
+         background: linear-gradient(90deg,#2ebe6a,#005a61,#03b7c4);
+    }
+    50%{
+        background: linear-gradient(90deg,#2ebe6a,#03b7c4,#005a61);
+    }
+    60%{
+         background: linear-gradient(90deg,#005a61,#2ebe6a,#03b7c4,);
+    }
+    70%{
+        background: linear-gradient(90deg,#03b7c4,#005a61,#2ebe6a);
+    }
+    80%{
+        background: linear-gradient(90deg,#03b7c4,#2ebe6a,#005a61);
+    }
+    90%{
+         background: linear-gradient(90deg,#2ebe6a,#005a61,#03b7c4);
+    }
+    100%{
+        background: linear-gradient(90deg,#2ebe6a,#03b7c4,#005a61);
+    }
+}
+@keyframes textt{
+    50%{
+        font-size: x-large;
+
+    }
+    100%{
+         font-size: larger;
+    }
+}
+.forward{
+    cursor: pointer;
+    color: white;
+    margin-top: 10px ;
+    width: 50%;
+    border-radius: 10px;
+    font-family: 'vazir';
+    font-size: larger;
+    border: none;
+    transition: 0.5s;
+    animation: gradientMove 5s infinite ,textt 5s infinite;
+
+}
+label{
+    font-family: 'vazir';
+    font-size: larger;
+    font-weight: bolder;
+}
+select{
+    background: none;
+    margin-top: 30px;
+    border: none;
+    width: 40%;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'vazir';
+    font-weight: bold;
+    font-size: large;
+    cursor: pointer;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+}
+option{
+    border-radius: 10px;
+    color: #050505;
+    background-color: transparent;
+    border: none;
+}
+select:focus{
+    outline: none;
+}
+@media(max-width:600px){
+    .tour{
+        width: 90%;
+    }
+    .select{
+        width: 60%;
+    }
+}
+.container{
+    width: 98%;
+    background-color: transparent;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+}
+
+a{
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    width: 30%;
+    padding: 5px;
+    height: 100%;
+    text-decoration: none;
+    font-family: 'vazir';
+    color: rgb(231, 231, 231);
+    font-weight: bolder;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+input{
+    font-family: 'vazir';
+    background-color: transparent;
+    font-size: x-large;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin-top: 10px;
+   
+
+}
+
+input:focus{
+    outline: none;
+}
+.container_two{
+
+    width: 100%;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.all_button{
+    display: none;
+    
+}
+.all_button{
+    width: 100%;
+    margin: 20px;
+  
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+button{
+    cursor: pointer;
+    width: 40%;
+    border: none;
+    font-family: 'vazir';
+    margin-top: 20px;
+    background-color: transparent;
+  
+    border-radius: 8px ;
+    font-size: x-large;
+    transition: 5s;
+}
+
+.choice_file{
+    display: none;
+    width: 30%;
+}
+.one_button:hover{
+    transform: translateY(-5px);
+}
+.two_button{
+    color: #2ebe6a;
+    border: 1px solid rgba(17, 253, 108, 0.5);;
+}
+.two_button:hover{
+    transform: translateY(-5px);
+}
+@media(max-width:762px){
+    button{
+        width: 70%;
+    }
+}
+h5{
+    font-family: 'vazir';
+    font-size: large;
+
+}
+.content_image{
+    width: 100%;
+    display: none;
+   
+}
+.label_choice_file{
+    border-radius: 5px;
+    padding: 8px;
+  
+    color: red;
+    margin-top: 10px;
+}
+@media (max-width:400px) {
+    h5{
+        font-size: 10px;
+    }
+    
+}
+.number_image{
+    font-size: large;
+}

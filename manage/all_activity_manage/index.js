@@ -5,6 +5,7 @@ let new_message=document.getElementById('new_message')
 let container_new_message=document.getElementById('container_new_message')
 let create_tour=document.getElementById('create_tour')
 let deleete=document.getElementById('delete')
+let update=document.getElementById('update')
 
 function all_message() {
     fetch('http://127.0.0.1:8000/manage/show_number_message').then(
@@ -84,8 +85,9 @@ create_tour.addEventListener('click',tour)
 
 function delete_content() {
     let id=document.getElementById('id').value
+    let content=document.getElementById('content').value
     console.log(id)
-    let data={'id':id}
+    let data={'id':id,'content':content}
     console.log(data)
     fetch('http://127.0.0.1:8000/manage/delet_countent/',{
         method:"POST",
@@ -95,6 +97,7 @@ function delete_content() {
         body:JSON.stringify(data)
     })
     document.getElementById('id').value=''
+    document.getElementById('content').value=''
    
     
 }
@@ -104,7 +107,14 @@ function delete_message() {
         <div class="box_close">
         <button id="close">❌</button>
         </div >
-        <div class="id"><textarea rows="1" class="input" id="id" placeholder="شماره محتوا  "></textarea></div>
+        <div class="guid">
+        <h4>قسمت  تور 1 </h4>
+        <h4>قسمت تور دونگی 2</h4>
+        </div>
+        <div class="id">
+        <input type="number" class="input" id="content" placeholder="کدام قسمت">
+        </div>
+        <div class="id"><input type="number" rows="1" class="input" id="id" placeholder="شماره محتوا  "></div>
         <div class="submit">
         <button id="submit">ارسال</button>
         </div>
@@ -117,3 +127,9 @@ function delete_message() {
     
 }
 deleete.addEventListener('click',delete_message)
+
+function page_update() {
+    window.location.assign('update/update.html')
+    
+}
+update.addEventListener('click',page_update)

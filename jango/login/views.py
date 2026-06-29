@@ -5,10 +5,14 @@ from django.http import JsonResponse
 import json
 from .models import *
 from datetime import date
+import random
+import requests
 #let data={'name':name,'number':number,'age':age,'password':password,'gender':gender,'accept':accept}
+number=0
 @csrf_exempt
 @require_POST
 def login(request):
+    global number
     data=json.loads(request.body.decode('UTF-8'))
     age=int(data['age'])
     number=users.objects.filter(number=data['number'])
@@ -25,6 +29,35 @@ def login(request):
             'result':'با این شماره قبلا ثبت نام کرده ایید'
         })
     else:
+        number=random.randint(1000,9999)
+        url = "https://api.sms-webservice.com/api/V3/SendBulk"
+        payload = {
+            "ApiKey": "279011-E2EAFD95578F4CD688F13C7151BF978C",
+            "Text":f'کد تایید شما در تور kianovin {number}',
+            "Sender": 50004075005515 ,
+            "Recipients": [
+                {
+                "Destination": data['number']
+                }
+            ]
+        }   
+
+        headers = {
+            'Content-Type': 'application/json' 
+        }
+
+        print(requests.post(url, headers=headers, json=payload))
+        return JsonResponse({
+            'result':True
+
+        })
+@csrf_exempt
+@require_POST
+def sendig_code_for_user(request):
+    data=json.loads(request.body.decode('UTF-8'))
+    print(data)
+    print(number)
+    if number==int(data['code']):
         users.objects.create(
             name=data['name'],
             number=data['number'],
@@ -36,7 +69,11 @@ def login(request):
         )
         return JsonResponse({
             'result':True
-
         })
+    else:
+        return JsonResponse({
+            'result':False
+        })
+    
         
 # Create your views here.

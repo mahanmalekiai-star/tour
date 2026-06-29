@@ -144,3 +144,118 @@ h4{
     text-align: center;
     background-color: yellow;
 }
+.box_sms{
+  
+  width: 50%;
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  position: sticky;
+  bottom: 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+
+
+}
+@media(max-width:750px){
+    .box_sms{
+        width: 74%;
+    }
+
+
+}
+@keyframes gradientMove{
+    0%{
+        background: linear-gradient(90deg,#005a61,#03b7c4,#2ebe6a);
+    }
+    10%{
+         background: linear-gradient(90deg,#005a61,#2ebe6a,#03b7c4,);
+    }
+    20%{
+        background: linear-gradient(90deg,#03b7c4,#005a61,#2ebe6a);
+    }
+    30%{
+        background: linear-gradient(90deg,#03b7c4,#2ebe6a,#005a61);
+    }
+    40%{
+         background: linear-gradient(90deg,#2ebe6a,#005a61,#03b7c4);
+    }
+    50%{
+        background: linear-gradient(90deg,#2ebe6a,#03b7c4,#005a61);
+    }
+    60%{
+         background: linear-gradient(90deg,#005a61,#2ebe6a,#03b7c4,);
+    }
+    70%{
+        background: linear-gradient(90deg,#03b7c4,#005a61,#2ebe6a);
+    }
+    80%{
+        background: linear-gradient(90deg,#03b7c4,#2ebe6a,#005a61);
+    }
+    90%{
+         background: linear-gradient(90deg,#2ebe6a,#005a61,#03b7c4);
+    }
+    100%{
+        background: linear-gradient(90deg,#2ebe6a,#03b7c4,#005a61);
+    }
+}
+.box_coding{
+    width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.code{
+    width: 60%;
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    font-size: larger;
+    color: rgb(0, 0, 0);
+    font-family: 'vazir';
+    backdrop-filter: blur(20px);
+    padding: 8px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.8);
+    margin-top: 5px;
+   
+  
+    
+
+}
+.code:focus{
+    outline: none;
+    border: 1px solid rgba(255,255,255,0.8);
+}
+.box_coding{
+    width: 80%;
+    text-align: center;
+}
+#send_code{
+    width: 60%;
+    animation: gradientMove 4s infinite;
+    
+}
+.send{
+    width: 80%;
+    text-align: center;
+   
+    margin-left:auto ;
+    margin-right: auto;
+}
+#close{
+    font-size: small;
+    box-shadow: none;
+    border: none;
+    background: none;
+
+}
+.box_close{
+    width: 10%;
+    height: fit-content;
+    margin-left: auto;
+    padding: 10px;
+    box-shadow: none;
+    border: none;
+    background: none;
+}

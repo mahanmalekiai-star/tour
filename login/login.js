@@ -1,14 +1,13 @@
 let submit=document.getElementById('submit')
 let back=document.getElementsByClassName("back")
 let error=document.getElementById('error')
-
-let box_sms=document.getElementById('box_sms')
-
-function sending_code() {
+let box_permition=document.getElementById('box_permition')
+let accept=false
+function sending_code(reload) {
+    reload.preventDefault()
     let code=document.getElementById('code').value
     let name=document.getElementById('name').value
     let number=document.getElementById('number').value
-    let accept=document.getElementById('accept').checked
     let age=document.getElementById('age').value
     let password=document.getElementById('password').value
     let gender=document.querySelector('input[name=gender]:checked').value
@@ -28,12 +27,16 @@ function sending_code() {
     ).then(
         function (sendig_code_for_user) {
             if(sendig_code_for_user['result']==true){
-                error.style.color='green'
-                error.textContent='ثبت نام شما با موفقیت ثبت شد '
+
+                alert('ثبت نام شما با موفقیت ثبت شد ✅')
+                window.location.assign('../index.html')
+              
+                
 
             }
             else{
                 alert('کد وارد شده نادرست است ❌')
+                
             }
             
         }
@@ -43,15 +46,12 @@ function sending_code() {
 
     
 }
-function clean() {
-    box_sms.innerHTML=''
-    
-}
+
 function login(event) {
     event.preventDefault()
     let name=document.getElementById('name').value
     let number=document.getElementById('number').value
-    let accept=document.getElementById('accept').checked
+    accept=document.getElementById('accept').checked
     let age=document.getElementById('age').value
     let password=document.getElementById('password').value
     let gender=document.querySelector('input[name=gender]:checked').value
@@ -81,12 +81,10 @@ function login(event) {
                
             }
             else if (user.result==true){
-                 box_sms.innerHTML=`
-                 <div class="box_close">
-                <button id="close">❌</button>
-                </div>
+                error.innerHTML=''
+                box_permition.innerHTML=`
                  <div class="box_coding">
-                    <input type="number" class="code" id="code" placeholder="کد ارسالی به شماره را وارد کنید ">
+                    <input type="text" maxlength=4 class="code" id="code" placeholder="کد ارسالی به شماره را وارد کنید ">
                 </div>
                 <div class="send">
                    <button id="send_code">ارسال</button>
@@ -94,12 +92,6 @@ function login(event) {
 
                 let send_code=document.getElementById('send_code')
                 send_code.addEventListener('click',sending_code)
-
-                let closee=document.getElementById('close')
-                closee.addEventListener('click',clean)
-                
-                
-
             }
             else{
                 alert(user.result)

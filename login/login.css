@@ -11,36 +11,33 @@
     font-family: 'brad';
     src: url(../font/BRADHITC.TTF);
 }
+
 body{
     background-image: url(pic/d1da81f1-f62e-48f4-92e7-20e049bfdd87.png);
     background-size: cover;
     background-repeat: no-repeat;
-     font-family:'title';
-}
-.back{
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    
+    font-family:'title';
+    border: 2px solid green;
+   height: 100vh;
   
     
 }
+
 .all{
-    max-width: 80%;
+    max-width: 100%;
     border-radius: 10px;
     display: flex;
     border-radius: 20px;
+    gap: 8px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    
    
 
 }
 .left{
-    width: 100%;
+    width: 50%;
     background-color:rgba(255,255,255,0.1);
     backdrop-filter: blur(15px);
     border-radius: 20px;
@@ -49,7 +46,9 @@ body{
     font-size: 20px;
     padding-top: 20px;
     border-right: 1px solid rgba(255,255,255,0.2);
-    padding: 40px;
+    padding: 10px;
+  
+    
 }
 h1{
     text-shadow: 0 2px 10px rgba(214, 20, 20, 0.5);
@@ -60,6 +59,8 @@ h1{
 
 }
 .login{
+    text-align: center;
+    max-width: 40%;
     flex-wrap: wrap;
     align-items: center;
     justify-items: center;
@@ -69,7 +70,7 @@ h1{
 }
 .input{
     font-size: x-large;
-    width: 100%;
+    width: 90%;
     margin-top: 30px;
     border-left: none;
     border-right: none;
@@ -77,6 +78,7 @@ h1{
     border: none;
     box-shadow: 0px 2px 2px #d35400;
     font-family: 'title';
+    border-radius: 5px;
 
 }
 label{
@@ -118,8 +120,9 @@ button:hover{
     font-family: 'title';
 }
 .box_permition{
+    width: 100%;
     box-shadow: 2px 3px 3px black;
-    overflow-y: scroll;
+   overflow-y: scroll;
     margin-top: 10px;
     background-color:rgba(0, 0, 0, 0.3) ;
     text-shadow: 0 1px 4px black;
@@ -138,24 +141,12 @@ input:focus{
     text-align: center;
     font-weight: bolder;
     font-weight: 800;
+  
    
 }
 h4{
     text-align: center;
     background-color: yellow;
-}
-.box_sms{
-  
-  width: 50%;
-  background-color: transparent;
-  margin-left: auto;
-  margin-right: auto;
-  position: sticky;
-  bottom: 10px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-
-
 }
 @media(max-width:750px){
     .box_sms{
@@ -206,15 +197,15 @@ h4{
     margin-right: auto;
 }
 .code{
-    width: 60%;
-    background-color: transparent;
+    width: 80%;
+    background-color: rgba(255,255,255,0.3);
     border-radius: 10px;
     border: none;
-    font-size: larger;
-    color: rgb(0, 0, 0);
+    font-size: large;
+    color: rgb(255, 255, 255);
     font-family: 'vazir';
     backdrop-filter: blur(20px);
-    padding: 8px;
+    padding: 3px;
     text-align: center;
     border: 1px solid rgba(255,255,255,0.8);
     margin-top: 5px;
@@ -243,13 +234,6 @@ h4{
     margin-left:auto ;
     margin-right: auto;
 }
-#close{
-    font-size: small;
-    box-shadow: none;
-    border: none;
-    background: none;
-
-}
 .box_close{
     width: 10%;
     height: fit-content;
@@ -258,4 +242,53 @@ h4{
     box-shadow: none;
     border: none;
     background: none;
+}
+@media (max-width:749px)  {
+
+    .code{
+        width: 90%;
+        font-size: 13px;
+    }
+    #send_code{
+        width: 80%;
+        font-size: 17px;
+    }
+    .box_permition{
+        max-width: 100%;
+    }
+}
+@media(max-width:680px){
+    label{
+        font-size: 13px;
+    }
+    #radio{
+        gap: 13px;
+    }
+}
+@media(max-width:947px){
+    .left{
+        font-size: 18px;
+    }
+}
+@media(max-width:843px){
+    .left{
+        font-size: 14px;
+    }
+}
+
+@media(max-width:550px){
+    .left{
+        font-size: 10px;
+    }
+    .input{
+        font-size: large;
+    }
+}
+@media(max-width:450px){
+    .left{
+        font-size: 7px;
+    }
+    .input{
+        font-size: 13px;
+    }
 }

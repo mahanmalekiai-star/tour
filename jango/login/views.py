@@ -9,6 +9,7 @@ import random
 import requests
 #let data={'name':name,'number':number,'age':age,'password':password,'gender':gender,'accept':accept}
 number=0
+for_securety=[]
 @csrf_exempt
 @require_POST
 def login(request):
@@ -20,7 +21,7 @@ def login(request):
     
     
 
-    if data['number'][0]!='0' or len(data['number'])!=11 or age<15 or len(data['password'])<8 or data['accept']==False   :
+    if data['number'][0]!='0' or data['number'][1]!='9' or len(data['number'])!=11 or age<15 or len(data['password'])<8 or data['accept']==False   :
         return JsonResponse({
             'result':False
         })    
@@ -30,6 +31,10 @@ def login(request):
         })
     else:
         number=random.randint(1000,9999)
+        for_securety.append({
+            'phone':data['number'],
+            'code':number
+        })
         url = "https://api.sms-webservice.com/api/V3/SendBulk"
         payload = {
             "ApiKey": "279011-E2EAFD95578F4CD688F13C7151BF978C",
@@ -46,7 +51,7 @@ def login(request):
             'Content-Type': 'application/json' 
         }
 
-        print(requests.post(url, headers=headers, json=payload))
+        print(requests.post(url, headers=headers, json=payload),number)
         return JsonResponse({
             'result':True
 
@@ -55,25 +60,27 @@ def login(request):
 @require_POST
 def sendig_code_for_user(request):
     data=json.loads(request.body.decode('UTF-8'))
-    print(data)
-    print(number)
-    if number==int(data['code']):
-        users.objects.create(
-            name=data['name'],
-            number=data['number'],
-            age=data['age'],
-            password=data['password'].strip().lower(),
-            gender=data['gender'],
-            accept=data['accept'],
-            regestration=date.today().strftime('%Y-%m-%d')
-        )
-        return JsonResponse({
-            'result':True
-        })
+    print(for_securety)
+
+    for i in range(len(for_securety)):
+        if data['number']==for_securety[i]['phone'] and int(data['code'])==for_securety[i]['code']:
+            users.objects.create(
+                name=data['name'],
+                number=data['number'],
+                age=data['age'],
+                password=data['password'].strip().lower(),
+                gender=data['gender'],
+                accept=data['accept'],
+                regestration=date.today().strftime('%Y-%m-%d')
+            )
+            for_securety.remove(for_securety[i])
+            return JsonResponse({
+                'result':True
+            })
     else:
         return JsonResponse({
             'result':False
         })
-    
         
+            
 # Create your views here.

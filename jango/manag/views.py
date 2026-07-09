@@ -365,12 +365,4 @@ def update_content(request):
     return JsonResponse({
         'result':True
     })
-
-
-
-
-
-
-
-
 # Create your views here.

@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from login.models import *
 from rest_framework_simplejwt.tokens import RefreshToken
+import requests
 #data={'name':name,'password':password}
 # number_phone=int()
 for_account=[]
@@ -40,6 +41,35 @@ def come_account(request):
         return JsonResponse({
             'result':False
         })
+    
+@csrf_exempt
+@require_POST
+def forggoting_password(request):
+    data=json.loads(request.body)
+    print(data)
+    data_user=users.objects.get(number=data['number'])
+    url = "https://api.sms-webservice.com/api/V3/SendBulk"
+    payload = {
+        "ApiKey": "279011-E2EAFD95578F4CD688F13C7151BF978C",
+        "Text":f'رمز عبور شما در سایت کیاناوین {data_user.password}',
+        "Sender": 50004075005515 ,
+        "Recipients": [
+            {
+            "Destination": data['number']
+            }
+        ]
+    }   
+
+    headers = {
+        'Content-type':'application/json'
+    }
+
+    print(requests.post(url, headers=headers, json=payload))
+    return JsonResponse({
+        'result':'send'
+    })
+
+
     
         
 

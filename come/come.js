@@ -1,5 +1,7 @@
 let submit=document.getElementById('submit')
 let error=document.getElementById('error')
+let click_forggot_pasword=document.getElementById('click_forggot_pasword')
+let box_fogget_password=document.getElementById('box_fogget_password')
 function com(event) {
     event.preventDefault()
     let password=document.getElementById('password').value
@@ -33,3 +35,21 @@ function com(event) {
     
 }
 submit.addEventListener('click',com)
+
+function for_password(reload) {
+    reload.preventDefault()
+    let phone=prompt('شماره موبایل خود را وارد کنید ')
+    console.log(phone)
+    let data={'number':phone}
+    fetch('http://127.0.0.1:8000/account/forggoting_password/',{
+        method:"POST",
+        headers:{
+            'Content-type':'application/json'
+        },
+        body:JSON.stringify(data)
+    })
+
+    
+    
+}
+click_forggot_pasword.addEventListener('click',for_password)

@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>ایجاد تور</title>
     <link rel="stylesheet" href="create_tour.css">
 </head>
 <body>
+    <div class="page-header">
+        <div class="brand-logo">K</div>
+        <h1>پنل ایجاد تور</h1>
+        <p>سفرهای جدید و تورهای دونگی را از همین‌جا برای کاربران منتشر کنید</p>
+    </div>
     <div class="all">
         <form class="tour" id="tour">
-            <div>
-                <div>
-                    <h4>ایجاد تور </h4>
+            <div class="tour-inner">
+                <div class="tour-heading">
+                    <h4>ایجاد تور</h4>
                 </div>
                 <div class="label">
-                    <label for="file" id="label"  >انتخاب  فایل </label>
+                    <label for="file" id="label">📁 انتخاب فایل</label>
                     <input type="file" id="file" multiple >
                 </div>
                 <div>
@@ -32,15 +37,14 @@
 
             </div>
         </form>
-            <form class="tour" >
-            <div>
-                <div>
-                    <h3>دونگی </h3>
+        <form class="tour tour-shared" >
+            <div class="tour-inner">
+                <div class="tour-heading">
+                    <h3>دونگی</h3>
                     <h4>ایجاد تور</h4>
-                    
                 </div>
                 <div class="label">
-                    <label for="file_two">انتخاب  فایل </label>
+                    <label for="file_two">📁 انتخاب فایل</label>
                     <input type="file" id="file_two" multiple>
                 </div>
                 <div>
@@ -59,7 +63,7 @@
             </div>
 
 
-            </form>
+        </form>
 
     </div>
 </body>

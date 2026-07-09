@@ -7,6 +7,7 @@ let create_tour=document.getElementById('create_tour')
 let deleete=document.getElementById('delete')
 let update=document.getElementById('update')
 
+
 function all_message() {
     fetch('http://127.0.0.1:8000/manage/show_number_message').then(
         function (response) {
@@ -16,7 +17,7 @@ function all_message() {
     ).then(
         function (show_number_message) {
             if(show_number_message['result']>0){
-                question.style.backgroundColor='red'
+                
                 question.style.color='black'
                 number.textContent=show_number_message['result']
 
@@ -84,10 +85,10 @@ create_tour.addEventListener('click',tour)
 
 
 function delete_content() {
-    let id=document.getElementById('id').value
-    let content=document.getElementById('content').value
-    console.log(id)
-    let data={'id':id,'content':content}
+ 
+    let which_content=document.getElementById('which_content').value
+    let number_contentt=document.getElementById('number_contentt').value
+    let data={'which_content':which_content,'number_contentt':number_contentt}
     console.log(data)
     fetch('http://127.0.0.1:8000/manage/delet_countent/',{
         method:"POST",
@@ -101,24 +102,66 @@ function delete_content() {
    
     
 }
+function number_content() {
+    let value_content=document.getElementById('which_content').value
+    let number_contentt=document.getElementById('number_contentt')
+    if (value_content!='') {
+        let data={'witch':value_content}
+        fetch('http://127.0.0.1:8000/manage/select_whitch_content/',{
+        method:'POST',
+        headers:{
+            'Content-type':'application\json'
+        },
+        body:JSON.stringify(data)
+        }).then(
+            function (response) {
+                return response.json()
+                
+            }
+        ).then(
+            function (select_whitch_content) {
+                number_contentt.innerHTML=''
+                select_whitch_content['result'].forEach(num => {
+                    number_contentt.innerHTML+=`<Option value="${num}">${num}</Option>`
+                    
+                });
+                
+                
+                
+            }
+        )
+        
+    }
+    
+   
+    
+}
 
 function delete_message() {
+    
     container_new_message.innerHTML=`
         <div class="box_close">
         <button id="close">❌</button>
         </div >
-        <div class="guid">
-        <h4>قسمت  تور 1 </h4>
-        <h4>قسمت تور دونگی 2</h4>
+        <div class="id">
+        <select name="" id="which_content">
+        <option value="" disabled  selected>انتخاب کنید  </option>
+        <option value="tour">تور </option>
+        <option value="dongi">تور دونگی </option>
+        </select>
         </div>
         <div class="id">
-        <input type="number" class="input" id="content" placeholder="کدام قسمت">
+        <select name="" id="number_contentt">
+        </select>
         </div>
-        <div class="id"><input type="number" rows="1" class="input" id="id" placeholder="شماره محتوا  "></div>
         <div class="submit">
-        <button id="submit">ارسال</button>
+        <button id="submit"> حذف </button>
         </div>
     `
+    container_new_message.style.border='1px solid pink'
+    let which_content=document.getElementById('which_content')
+    which_content.addEventListener('click',number_content)
+    
     let closee=document.getElementById('close')
     closee.addEventListener('click',clean)
 

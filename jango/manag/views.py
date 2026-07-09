@@ -12,7 +12,7 @@ time='00:00:10'
 finish='00:00:00'
 finish=datetime.strptime(finish,'%H:%M:%S')
 time=datetime.strptime(time,'%H:%M:%S')
-idd=set()
+
 
 @csrf_exempt
 @require_POST
@@ -197,17 +197,17 @@ def send_sms(request):
 @csrf_exempt
 @require_POST
 def save_tour(request):
-    global idd
     file=request.FILES.getlist('file')
     name_place=request.POST.get('name_place')
     expresion=request.POST.get('expresion')
     price=request.POST.get('price')
+    print(price)
     upload_tourist.objects.create(
         name_place=name_place,
         expresion=expresion,
         price=price
-
     )
+    print('koos')
     data=upload_tourist.objects.latest('id')
     print(data.id)
     for i in file:
@@ -220,18 +220,38 @@ def save_tour(request):
     })
 @csrf_exempt
 @require_POST
+def select_whitch_content(request):
+    data=json.loads(request.body)
+    if data['witch']=='tour':
+        number=[]
+        for i in upload_tourist.objects.all():
+            number.append(i.id)
+        return JsonResponse({
+            'result':number
+        })
+    else :
+        number=[]
+        for i in upload_tourist_dongi.objects.all():
+            number.append(i.id)
+        return JsonResponse({
+            'result':number
+        })
+
+
+@csrf_exempt
+@require_POST
 def delet_countent(request):
     data=json.loads(request.body)
     print(data)
-    if data['content']=='1':
-        data=upload_tourist.objects.filter(id=data['id'])
+    if data['which_content']=='tour':
+        data=upload_tourist.objects.filter(id=data['number_contentt'])
         data.delete()
         print('lololololololo')
         return JsonResponse({
             'result':True
         })
     else:
-        data=upload_tourist_dongi.objects.filter(id=data['id'])
+        data=upload_tourist_dongi.objects.filter(id=data['number_contentt'])
         data.delete()
         return JsonResponse({
             'result':True
@@ -241,6 +261,7 @@ def delet_countent(request):
 @csrf_exempt
 @require_POST  
 def save_tour_dongi(request):
+    
     files=request.FILES.getlist('file')
     name_place_two=request.POST.get('name_place_two')
     expresion_two=request.POST.get('expresion_two')

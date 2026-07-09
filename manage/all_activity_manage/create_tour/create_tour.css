@@ -11,23 +11,84 @@
     font-family:'iran';
     src: url(../../../font/irsans_P30Day.com.ttf);
 }
-body{
-    background-color: #2d5a27;
 
+:root{
+    --deep-teal: #002826;
+    --teal: #004B49;
+    --teal-light: #0a6b68;
+    --accent: #FF8C42;
+    --accent-soft: #FFB07C;
+    --paper: #f2e8cf;
 }
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(255,140,66,0.18) 0%, transparent 45%),
+        radial-gradient(circle at 85% 90%, rgba(10,107,104,0.35) 0%, transparent 50%),
+        linear-gradient(160deg, var(--deep-teal) 0%, var(--teal) 55%, #013634 100%);
+    font-family: 'vazir';
+    padding-bottom: 60px;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header{
+    text-align: center;
+    padding: 50px 20px 30px;
+    color: #ffffff;
+}
+.brand-logo{
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 18px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--accent), #c45f22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'iran';
+    font-size: 28px;
+    font-weight: 700;
+    box-shadow: 0 12px 25px rgba(255,140,66,0.4);
+}
+.page-header h1{
+    font-family: 'iran';
+    font-size: 28px;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ffffff, var(--accent-soft));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+}
+.page-header p{
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.9;
+}
+
 .all{
-    
-    width: 95%;
+    width: 90%;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #f2e8cf;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
-    margin-top: 50px;
-    border-radius: 20px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.12);
+    margin-top: 20px;
+    border-radius: 28px;
     display: flex;
-    gap: 50px;
+    gap: 40px;
     flex-wrap: wrap;
-    
+    padding: 40px;
+    justify-content: center;
 }
 #file,#file_two{
     display: none;
@@ -36,98 +97,139 @@ h4,label{
     font-family: 'vazir';
 }
 h4{
-    font-size: xx-large;
+    font-size: 24px;
     display: inline;
-    
+    color: #ffffff;
+    font-weight: 700;
 }
 h3{
     font-family:'iran';
     display: inline;
-    font-size: xx-large;
-    color: gold;
+    font-size: 22px;
+    color: var(--accent-soft);
+    margin-left: 10px;
+    background: rgba(255,140,66,0.15);
+    padding: 4px 14px;
+    border-radius: 100px;
+    border: 1px solid rgba(255,140,66,0.4);
+}
+.tour-heading{
+    margin-bottom: 8px;
 }
 .label{
-    margin-top: 20px;
+    margin-top: 22px;
     width: 100%;
 }
 label{
     display: block;
-    width: 50%;
+    width: 65%;
     cursor: pointer;
-    font-size: larger;
-    box-shadow: 0 3px 3px #8adb80;
-    border-radius: 3px;
-    transition: 0.3s;
+    font-size: 15px;
+    color: #ffffff;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: none;
+    border-radius: 12px;
+    padding: 12px 10px;
+    transition: 0.3s ease;
     margin-left: auto;
     margin-right: auto;
-    transition: 0.5s;
-    
+    text-align: center;
 }
 label:hover{
-    box-shadow: 0 -3px 3px #8adb80;
-    transform: translateY(-5px);
-
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 10px 20px rgba(255,140,66,0.35);
+    transform: translateY(-4px);
 }
 .tour{
-    width: 40%;
-    padding: 30px;
+    width: 42%;
+    min-width: 300px;
+    flex: 1 1 340px;
+    padding: 32px 28px;
     text-align: center;
-   
-    background-color: #386641;
-    border-radius: 25px;
-    color: #f2e8cf;
+    background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    border-radius: 22px;
+    color: var(--paper);
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
-    margin-top: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-top: 3px solid var(--accent);
+    margin-top: 0;
     margin-bottom: 10px;
-   
+    transition: 0.3s ease;
+}
+.tour:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+.tour-shared{
+    border-top: 3px solid var(--accent-soft);
 }
 input,textarea{
     width: 100%;
-    margin-top: 20px;
+    margin-top: 18px;
     resize: none;
     text-align: center;
     font-family: 'vazir';
     border: none;
-     font-family: 'vazir';
-    font-size: 20px;
-    border-radius: 5px;
+    font-size: 16px;
+    border-radius: 10px;
     transition: 0.3s;
-
+    background: rgba(255,255,255,0.9);
+    padding: 12px 10px;
+    color: var(--deep-teal);
+}
+input::placeholder, textarea::placeholder{
+    color: #6b7a78;
 }
 input:focus{
     outline: none;
     background: rgba(255, 255, 255, 1);
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 textarea:focus{
     outline: none;
     background: rgba(255, 255, 255, 1);
-    transform: translateY(-5px);
-
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 button{
     cursor: pointer;
     font-family: 'vazir';
-    font-size: larger;
-    margin-top: 30px;
+    font-size: 17px;
+    margin-top: 26px;
     border: none;
-    background: rgba(255, 255, 255, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 5px;
-    width: 60%;
+    background: linear-gradient(135deg, var(--accent), #c45f22);
+    color: #fff;
+    border-radius: 10px;
+    width: 65%;
+    padding: 12px 0;
     font-weight: 800;
-    box-shadow: 5px 5px 5px #8adb80;
+    box-shadow: 0 10px 25px rgba(255,140,66,0.4);
+    transition: 0.3s ease;
+}
+button:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(255,140,66,0.5);
 }
 button:active{
-    background-color: #a7c957;
+    background: #c45f22;
+    transform: translateY(-1px);
 }
 
 @media(max-width:700px){
     .tour{
-        width: 70%;
+        width: 90%;
+    }
+    .all{
+        padding: 26px 18px;
+        gap: 26px;
+    }
+    .page-header h1{
+        font-size: 22px;
     }
 }
 h6{
@@ -135,12 +237,12 @@ h6{
     font-family: 'vazir';
     font-size: larger;
     margin-top: 10px;
-    color: rgb(106, 243, 106);
-    margin-top: 10px;
+    color: var(--accent-soft);
 }
 h5{
     display: inline;
     font-family: 'vazir';
     font-size: x-large;
     margin-top: 10px;
+    color: #fff;
 }

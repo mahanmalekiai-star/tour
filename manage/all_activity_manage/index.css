@@ -7,88 +7,228 @@
     font-family: 'vahid';
     src: url(../../font/Vazir-Light.ttf);
 }
-body{
-     background-color: #f1f5f9;
-     color: #0f172a;
+@font-face{
+    font-family: 'vazir';
+    src: url(../../font/Vazir-Light.ttf);
 }
-.all{
-    background: linear-gradient(135deg,#0f172a,#3b82f6);
-    width: 90%;
-    box-shadow: 0 0 5px black;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    border-radius: 20px;
+@font-face{
+    font-family: 'brad';
+    src: url(../../font/BRADHITC.TTF);
 }
 
-.users,.change,.tours{
-    background-color: transparent;
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,255,255,0.3);
-    backdrop-filter: blur(10px);
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    flex-wrap: wrap;
-    text-align: center;
-    border-radius: 1.5rem;
-    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.5),0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(203, 213, 255, 0.4);
-   
+:root{
+    --deep-teal: #002826;
+    --teal: #004B49;
+    --teal-light: #0a6b68;
+    --accent: #FF8C42;
+    --accent-soft: #FFB07C;
+    --bg: #f3f6f5;
+    --card: #ffffff;
+    --ink: #1e2624;
 }
-button{
-   
-    cursor: pointer;
-    width: 70%;
-    background-color: rgba(255,255,255,0.25);
-    border: none;
-    margin-top: 20px;
-    font-family: 'vahid';
-    font-size: xx-large;
-    color: rgb(255, 255, 255);
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgb(196, 196, 196);
-    transition: 0.3s;
-     border: 1px solid rgba(243, 241, 241, 0.3);
-    
+
+html{
+    scroll-behavior: smooth;
 }
-button:active{
-    outline: none;
+body{
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: 'vazir';
+    min-height: 100vh;
 }
-p{
-    font-size: 17px;
-    font-weight: 600;
+
+.dash{
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0 60px;
 }
-button:hover{
-    background-color: rgb(112, 173, 253);
-    transform: translateY(-5px);
-    color: black;
+
+
+.dash-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--deep-teal) 100%);
+    border-radius: 22px;
+    padding: 20px 30px;
+    box-shadow: 0 15px 40px rgba(0,40,38,0.25);
+    margin-bottom: 40px;
 }
-@media(max-width:530px){
-    button{
-        font-size: x-large;
+.brand{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.brand-logo{
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--accent), #c45f22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'brad';
+    font-size: 24px;
+    color: #fff;
+    box-shadow: 0 8px 18px rgba(255,140,66,0.4);
+}
+.brand-text h1{
+    font-family: 'brad';
+    color: #fff;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+.brand-text span{
+    font-size: 12px;
+    color: var(--accent-soft);
+    letter-spacing: 3px;
+}
+.admin-tag{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-size: 13px;
+    background: rgba(255,255,255,0.08);
+    padding: 8px 16px;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+.dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3ddc84;
+    box-shadow: 0 0 8px #3ddc84;
+}
+@media(max-width:520px){
+    .dash-header{
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+        text-align: center;
     }
 }
-h5{
-    display: inline;
-    height: fit-content;
-    width: fit-content;
-    box-shadow: 2px 3px 3px white;
+
+
+.dash-section{
+    margin-bottom: 44px;
+}
+.section-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 4px;
+}
+
+.tours,.users,.change{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+
+button.card{
+    cursor: pointer;
+    background: var(--card);
+    border: 1px solid rgba(0,75,73,0.08);
+    border-radius: 20px;
+    padding: 26px 22px;
+    text-align: right;
+    box-shadow: 0 6px 20px rgba(0,40,38,0.06);
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    font-family: 'vazir';
+    color: var(--ink);
+    position: relative;
+    overflow: hidden;
+}
+button.card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--accent);
+    opacity: 0;
+    transition: 0.3s ease;
+}
+button.card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,40,38,0.15);
+    border-color: rgba(255,140,66,0.3);
+}
+button.card:hover::before{
+    opacity: 1;
+}
+button.card:active{
+    outline: none;
+    transform: translateY(-2px);
+}
+.card-icon{
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+.card-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+button.card p{
+    font-size: 13.5px;
+    font-weight: 400;
+    color: #667370;
+    line-height: 1.8;
+    text-align: right;
+}
+
+#number{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 100%;
+    background: darkgreen;
+    color: #b9b9b9;
+    font-size: 12px;
+    box-shadow: none;
+}
+
+@media(max-width:530px){
+    .card-title{
+        font-size: 16px;
+    }
+    button.card{
+        padding: 20px 18px;
+    }
 }
 
 .box_new_meessage{
     position: sticky;
-    bottom: 0;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-   
-    
+    bottom: 20px;
+    width: 60%;
+    margin: 40px auto 0;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 18px;
+    border: 1px solid rgba(0,75,73,0.1);
+    box-shadow: 0 15px 35px rgba(0,40,38,0.12);
 }
 .box_close{
     width: 10%;
@@ -104,13 +244,10 @@ h5{
     box-shadow: none;
     border: none;
     background: none;
-
 }
 .id{
     width: 100%;
     text-align: center;
-   
-  
     align-items: center;
     justify-content: center;
     margin-top: 30px;
@@ -118,58 +255,81 @@ h5{
 .input{
     text-align: center;
     background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(0,75,73,0.25);
     font-family: 'vazir';
     border-radius: 10px;
     font-size: x-large;
-    box-shadow: 0 5px 5px black;
+    box-shadow: none;
     flex-wrap: wrap;
+    color: var(--ink);
 }
 .input:focus{
     outline: none;
+    border-color: var(--accent);
 }
 .submit{
     align-items: center;
     justify-content: center;
     text-align: center;
-
+    margin-top: 10px;
 }
 #submit{
-    background: linear-gradient(135deg,#0f172a,#3b82f6);
+    background: linear-gradient(135deg, var(--teal), var(--deep-teal));
     margin-left: auto;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    font-family: 'vazir';
+    font-size: large;
+    transition: 0.3s;
 }
 #submit:hover{
-    text-shadow: 0 5px 5px  #1effff;
-    color: white;
+    background: linear-gradient(135deg, var(--accent), #c45f22);
+    transform: translateY(-3px);
 }
 @media(max-width:680px){
     .box_new_meessage{
         width: 88%;
     }
-
 }
 textarea{
     resize: none;
-}
-h5{
-    border-radius: 100%;
-}
-@font-face{
-    font-family: 'vazir';
-    src: url(../../font/Vazir-Light.ttf);
 }
 .guid{
     text-align: center;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    
 }
 h4{
     font-family: 'vazir';
     font-size: larger;
     font-weight: bolder;
-    color: rgb(33, 46, 42);
-    text-shadow: 0 0 5px #1effff;
-
+    color: var(--teal);
+}
+select{
+    background: #0a6b68;
+    margin-top: 30px;
+    border: none;
+    width: 40%;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'vazir';
+    font-weight: bold;
+    font-size: large;
+    cursor: pointer;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+}
+option{
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #292929;
+    border: none;
+}
+select:focus{
+    outline: none;
 }

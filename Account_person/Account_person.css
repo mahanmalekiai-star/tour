@@ -156,7 +156,7 @@ h2{
     max-width: 100px;
     height: 100px;
     border-radius: 100%;
-    background-image: url(../index/pic/IMG_۲۰۲۵۰۹۰۹_۲۱۰۰۱۶.jpg);
+    background-image: url(../index/pic/-2147483648_-210867.jpg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -521,4 +521,82 @@ textarea:focus{
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+}
+
+
+.right{
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    z-index: 2;
+    background: linear-gradient(180deg, rgba(0,40,38,0.15) 0%, rgba(0,20,19,0.75) 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    font-family: 'iran';
+    color: white;
+    text-shadow: none;
+    border-radius: 0;
+    padding: 24px 4% 30px;
+    top: 0;
+}
+.kianovin{
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 22px;
+}
+h2{
+    font-family: 'bar';
+    display: inline;
+    margin-left: 0;
+    font-size: xx-large;
+    text-shadow: 0 2px 12px rgba(255,140,66,0.5);
+    letter-spacing: 2px;
+    background: linear-gradient(90deg,#ffffff,#FFB07C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.all_buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+}
+.all_buttons a{
+    text-decoration: none;
+    font-family: 'vazir';
+    font-size: 14px;
+    color: #ffffff;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 10px 22px;
+    border-radius: 100px;
+    transition: 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+.all_buttons a:hover{
+    background: #FF8C42;
+    border-color: #FF8C42;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(255,140,66,0.4);
+}
+@media(max-width:459px){
+    .right{
+        padding: 16px 4% 20px;
+    }
+    .all_buttons{
+        gap: 8px;
+    }
+    .all_buttons a{
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+    h2{
+        font-size: large;
+    }
 }

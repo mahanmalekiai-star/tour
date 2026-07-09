@@ -44,14 +44,15 @@ function chart() {
                     datasets:[{
                             label:'کاربران سایت ',
                             data:chart['data'],
-                            tension:0.3,
+                            tension:0.3
                            
                         }
                     ]
                 },
                 options:{
                     responsive:true,
-                    maintainAspectRatio:false
+                    maintainAspectRatio:false,
+                    color:'White'
 
                 }
             })

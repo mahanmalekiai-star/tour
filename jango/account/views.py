@@ -51,7 +51,7 @@ def forggoting_password(request):
     url = "https://api.sms-webservice.com/api/V3/SendBulk"
     payload = {
         "ApiKey": "279011-E2EAFD95578F4CD688F13C7151BF978C",
-        "Text":f'رمز عبور شما در سایت کیاناوین {data_user.password}',
+        "Text":f'رمز عبور شما در سایت کیان اوین {data_user.password}',
         "Sender": 50004075005515 ,
         "Recipients": [
             {
@@ -59,6 +59,7 @@ def forggoting_password(request):
             }
         ]
     }   
+    print(data_user.password)
 
     headers = {
         'Content-type':'application/json'
